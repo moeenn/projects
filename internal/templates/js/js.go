@@ -8,7 +8,7 @@ import (
 )
 
 func Initialize(args *templates.TemplateArgs) error {
-	fmt.Printf("Initializing new JS project: %s\n", args.ProjectName)
+	fmt.Printf("Initializing new Javascript project: %s\n", args.ProjectName)
 	err := initDirectoryStructure(args)
 	if err != nil {
 		return err

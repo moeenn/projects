@@ -1,0 +1,9 @@
+{{ define "ts.index_ts" }}
+import "module-alias/register"
+
+async function main(): Promise<void> {
+  console.log("Hello world")
+}
+
+main().catch(console.error)
+{{ end }}

@@ -1,0 +1,63 @@
+{{ define "ts.package_json" }}
+{
+  "name": "{{ .ProjectName }}",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node build/index.js\"",
+    "build": "npx tsc",
+    "start": "NODE_ENV=production node build/index.js",
+    "test": "npx vitest",
+    "lint": "npx eslint ./src/ --ext .ts",
+    "fmt": "npx prettier --write 'src/**/*.ts'",
+    "check": "npm run fmt && npm run lint"    
+  },
+  "_moduleAliases": {
+    "@": "build"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+	  "no-console": "error",
+      "quotes": [
+        2,
+        "double",
+        {
+          "allowTemplateLiterals": true,
+          "avoidEscape": true
+        }
+      ],
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": false,
+    "semi": false,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.16.0",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.0.4",
+    "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2"
+  }
+}
+{{ end }}

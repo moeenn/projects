@@ -1,0 +1,26 @@
+{{ define "ts.tsconfig_json" }}
+{
+  "compilerOptions": {
+	"strict": true,
+    "allowJs": false,
+    "checkJs": false,
+    "strictFunctionTypes": true,
+    "incremental": true,
+    "module": "CommonJS",
+    "target": "es2018",
+    "moduleResolution": "node10",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "baseUrl": ".",
+    "outDir": "build",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
+{{ end }}

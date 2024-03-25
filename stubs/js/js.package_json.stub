@@ -33,6 +33,7 @@
       "ecmaVersion": "latest"
     },
     "rules": {
+      "no-console": "error",
       "quotes": [
         2,
         "double",

@@ -1,0 +1,7 @@
+{{ define "ts.index_test_ts" }}
+import { test, expect } from "vitest"
+
+test("sample test", async () => {
+  expect(1).toBe(1)
+})
+{{ end }}
